@@ -1,15 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, LinkedIn, Twitter } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
-  const [showTitle, setShowTitle] = useState(false);
-
-  useEffect(() => {
-    setShowTitle(true);
-  }, []);
-
   const variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -21,7 +15,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <motion.h1
-              className="text-5xl sm:text-6xl font-bold leading-tight tracking-tital mb-4"
+              className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight mb-4"
               variants={variants}
               initial="hidden"
               animate="visible"
@@ -62,7 +56,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="lg:col-span-1">
             <Image
               src="/next.svg"
               alt="Next.js logo"
@@ -71,30 +65,15 @@ export function Hero() {
               className="relative aspect-[4/3] w-full rounded-lg overflow-hidden shadow-2xl"
               priority
             />
-            <motion.div
+            <div
               className="absolute -bottom-4 -right-4 rounded-full bg-[var(--deep)] border border-[var(--primary)] w-16 h-16"
-              variants={{
-                hidden: { opacity: 0, scale: 0.5 },
-                visible: { opacity: 1, scale: 1 },
-              }}
-              transition={{ type: "spring", delay: 0.3 }}
             />
           </div>
         </div>
 
         {/* Scroll indicator */}
         <div className="mt-12 flex items-center justify-center">
-          <motion.div
-            className="flex flex-col items-center gap-2"
-            animate={{
-              opacity: [0, 1, 0],
-              transition: {
-                duration: 3,
-                repeat: Infinity,
-                repeatDelay: 1,
-              },
-            }}
-          >
+          <div className="flex flex-col items-center gap-2">
             <span className="text-[var(--muted)] text-sm">Scroll</span>
             <svg
               className="w-5 h-5"

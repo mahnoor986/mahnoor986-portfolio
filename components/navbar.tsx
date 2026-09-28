@@ -1,20 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+function cn(...classes: (string | boolean | undefined)[]) {
+  return classes.filter(Boolean).join(" ");
+}
+
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    setIsDark(prefersDark.matches);
-    const handleChange = (e: MediaQueryListEvent) =>
-      setIsDark(e.matches);
-    prefersDark.addEventListener("change", handleChange);
-    return () => prefersDark.removeEventListener("change", handleChange);
-  }, []);
 
   return (
     <nav

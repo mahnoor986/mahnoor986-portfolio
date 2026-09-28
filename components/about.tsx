@@ -22,7 +22,7 @@ export function About() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ type: "spring", duration: 0.8, delay: 0.1 }}
             >
-              I'm a senior full-stack developer with over 6 years of experience building
+              I am a senior full-stack developer with over 6 years of experience building
               scalable web applications and developer tools. I specialize in modern
               JavaScript ecosystems, TypeScript architecture, and crafting pixel-perfect
               user interfaces that balance aesthetics with functionality.

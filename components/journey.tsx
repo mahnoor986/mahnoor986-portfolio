@@ -1,5 +1,9 @@
 "use client";
 
+function cn(...classes: (string | boolean | undefined)[]) {
+  return classes.filter(Boolean).join(" ");
+}
+
 import { motion } from "framer-motion";
 
 export function Journey() {

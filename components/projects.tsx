@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Eye, Link } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -60,7 +60,7 @@ export function Projects() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ type: "spring", duration: 0.8, delay: 0.1 }}
           >
-            A curated selection of work I'm proud of.
+            A curated selection of work I am proud of.
           </motion.p>
         </div>
 
